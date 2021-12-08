@@ -1,6 +1,11 @@
 import { makeStyles } from "@mui/styles";
 
 export const useResponsive = makeStyles(theme => ({
+    mdAlignCenter: {
+        [theme.breakpoints.up('md')]: {
+            alignItems: 'center !important'
+        }
+    },
     mdAlignStart: {
         [theme.breakpoints.up('md')]: {
             alignItems: 'flex-start !important'
@@ -16,6 +21,11 @@ export const useResponsive = makeStyles(theme => ({
             flexDirection: 'column !important'
         }
     },
+    mdFlex: {
+        [theme.breakpoints.up('md')]: {
+            display: 'flex !important'
+        }
+    },
     mdNone: {
         [theme.breakpoints.up('md')]: {
             display: 'none !important'
@@ -29,6 +39,11 @@ export const useResponsive = makeStyles(theme => ({
     mdJustifyBetween: {
         [theme.breakpoints.up('md')]: {
             justifyContent: 'space-between !important'
+        }
+    },
+    mdJustifyCenter: {
+        [theme.breakpoints.up('md')]: {
+            justifyContent: 'center !important'
         }
     },
     mdMb0: {

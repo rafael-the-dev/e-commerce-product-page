@@ -2,6 +2,13 @@ import { makeStyles } from "@mui/styles";
 
 
 export const useStyles = makeStyles(theme => ({
+    main: {
+    },
+    heroSection: {
+        [theme.breakpoints.up('md')]: {
+            padding: '1rem 10%'
+        }
+    },
     heroSectionContent: {
         padding: '2rem 5%'
     },

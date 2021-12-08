@@ -8,6 +8,9 @@ export const useStyles = makeStyles(theme => ({
     minWidth0: {
         minWidth: '0 !important'
     },
+    headerBadge: {
+        backgroundColor: '#FF7E1B !important'
+    },
     headerAvatar: {
         height: '30px !important',
         width: '30px !important'
