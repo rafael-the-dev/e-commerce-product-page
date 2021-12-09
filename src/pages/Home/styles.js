@@ -5,6 +5,9 @@ export const useStyles = makeStyles(theme => ({
     main: {
     },
     heroSection: {
+        [theme.breakpoints.up('sm')]: {
+            padding: '1rem 10%'
+        },
         [theme.breakpoints.up('md')]: {
             padding: '1rem 10%'
         }

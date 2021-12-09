@@ -53,8 +53,8 @@ const Home = () => {
                 responsive.mdJustifyCenter, display.flexGrow1)}>
                 <section className={classNames(display.flex, display.flexColumn, classes.heroSection, 
                     responsive.mdRow, display.alignCenter )}>
-                    <Hidden mdDown><GalleryImage showThumbnails /></Hidden>
-                    <Hidden mdUp><GalleryImage /></Hidden>
+                    <Hidden mdDown><GalleryImage showThumbnails={true} /></Hidden>
+                    <Hidden mdUp><GalleryImage showThumbnails={false} /></Hidden>
                     <div className={classNames(classes.heroSectionContent)}>
                         <Typography component="h2" variant="h5" className={classNames(classes.heroSectionTitle, text.font7)}>
                             Fall Limited Edition<br />Sneackers
