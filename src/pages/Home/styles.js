@@ -13,7 +13,7 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     heroSectionContent: {
-        padding: '2rem 5%'
+        padding: '2rem 7%'
     },
     heroSectionTitle: {
         '&::before': {
