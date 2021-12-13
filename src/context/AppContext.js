@@ -34,7 +34,17 @@ export const AppContextProvider = ({ children }) => {
         const product = getProducts().find(item => item.id = id);
         if(product) {
             setCartList(oldList => {
-                const items =  [ ...oldList, { id: oldList.length + 1, product, quantity, totalPrice: product.price * quantity }];
+                let result = oldList.find(item => item.product.id === product.id);
+                const items =  [ ...oldList ];
+
+                if(result) {
+                    result.quantity = result.quantity + quantity;
+                    result.totalPrice = result.totalPrice + (product.price * quantity);
+                } else {
+                    result = { id: oldList.length + 1, product, quantity, totalPrice: product.price * quantity };
+                    items.push(result);
+                }
+
                 addItemsToLocalStorage(items);
                 return items;
             });
@@ -54,7 +64,6 @@ export const AppContextProvider = ({ children }) => {
 
     useEffect(() => {
         const items = JSON.parse(localStorage.getItem(localStorageName.current));
-        console.log(Array.isArray(items))
         if(Array.isArray(items)) {
             setCartList(items);
         }
@@ -62,7 +71,7 @@ export const AppContextProvider = ({ children }) => {
 
     return (
         <AppContext.Provider value={{ addProductToCart, closeCartDialog, currentPage, getProducts, getCartList, openCartDialog, 
-            setCurrentPage, toggleCartDialog, removeProductFromCart }}>
+            setCurrentPage, toggleCartDialog, removeProductFromCart, setCartList }}>
             { children }
         </AppContext.Provider>
     );

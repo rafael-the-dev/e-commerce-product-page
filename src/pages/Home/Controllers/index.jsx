@@ -50,6 +50,7 @@ const Controllers = () => {
                 variant="contained"
                 className={classNames(text.textLight, classes.heroSectionControllersAddButton, responsive.mdMl1, text.font7)} 
                 onClick={() => addProductToCart(1, counter)}
+                disabled={!Boolean(counter)}
                 startIcon={<ShoppingCartOutlinedIcon />}>
                 Add to cart
             </Button>

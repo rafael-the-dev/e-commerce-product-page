@@ -10,6 +10,9 @@ export const useStyles = makeStyles(theme => ({
     heroSectionControllers: {
         backgroundColor: '#F6F8FD',
         padding: '.4rem .8rem',
+        [theme.breakpoints.up('md')]: {
+            width: 120
+        },
         [theme.breakpoints.up(1500)]: {
             width: 240
         }

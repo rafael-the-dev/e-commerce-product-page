@@ -12,11 +12,9 @@ const CartDialog = () => {
     const text = useTypography();
     const responsive = useResponsive();
 
-    const { getCartList, openCartDialog, closeCartDialog } = useContext(AppContext);
+    const { closeCartDialog, getCartList, openCartDialog, setCartList } = useContext(AppContext);
 
-    const checkoutClickHandler = () => {
-
-    };
+    const checkoutClickHandler = () => setCartList([]);
 
     return (
         <Dialog 

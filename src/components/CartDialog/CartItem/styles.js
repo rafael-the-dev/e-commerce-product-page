@@ -18,7 +18,10 @@ export const useStyles = makeStyles(theme => ({
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
-        width: 152
+        width: 152,
+        [theme.breakpoints.up('sm')]: {
+            width: 212
+        },
     },
     productTotalPrice: {
         marginLeft: 7
