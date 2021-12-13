@@ -1,6 +1,11 @@
 import { makeStyles } from "@mui/styles";
 
 export const useResponsive = makeStyles(theme => ({
+    smJustifyEnd: {
+        [theme.breakpoints.up('sm')]: {
+            justifyContent: 'flex-end !important'
+        }
+    },
     mdAlignCenter: {
         [theme.breakpoints.up('md')]: {
             alignItems: 'center !important'

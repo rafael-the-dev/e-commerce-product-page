@@ -13,7 +13,13 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     heroSectionContent: {
-        padding: '2rem 7%'
+        padding: '2rem 7%',
+        [theme.breakpoints.up('md')]: {
+            padding: '0 0 2rem 7% !important',
+        },
+        [theme.breakpoints.up('md')]: {
+            //padding: '2rem 7%',
+        }
     },
     heroSectionTitle: {
         '&::before': {
@@ -28,7 +34,10 @@ export const useStyles = makeStyles(theme => ({
         }
     },
     heroSectionDescription: {
-        color: '#69707D'
+        color: '#69707D',
+        [theme.breakpoints.up('lg')]: {
+            width: '80%'
+        }
     },
     heroSectionPrice: {
         fontSize: '1.2rem !important'

@@ -1,4 +1,5 @@
 import Header from '../../components/Header';
+import CartDialog from '../../components/CartDialog';
 import ImageGallery from 'react-image-gallery';
 import { useRef } from 'react';
 import classNames from 'classnames';
@@ -13,6 +14,7 @@ import imageProduct3Thumbnail from '../../assets/images/image-product-3-thumbnai
 import imageProduct4 from '../../assets/images/image-product-4.jpg'
 import imageProduct4Thumbnail from '../../assets/images/image-product-4-thumbnail.jpg'
 import { Hidden, Typography } from '@mui/material';
+import Controllers from './Controllers'
 
 const Home = () => {
 
@@ -59,11 +61,11 @@ const Home = () => {
                         <Typography component="h2" variant="h5" className={classNames(classes.heroSectionTitle, text.font7)}>
                             Fall Limited Edition<br />Sneackers
                         </Typography>
-                        <Typography className={classNames(display.mt1, display.opacity9, classes.heroSectionDescription)}>
+                        <Typography gutterBottom className={classNames(display.mt1, display.opacity9, classes.heroSectionDescription)}>
                             These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
                         </Typography>
                         <div className={classNames(display.mt2, display.flex, display.alignCenter, 
-                            display.justifyBetween, responsive.mdColumn, responsive.mdAlignStart)}>
+                            display.justifyBetween, responsive.mdColumn, responsive.mdAlignStart, responsive.mdMt0, responsive.mdPt0)}>
                             <div className={classNames(display.flex, display.alignCenter)}>
                                 <Typography component="h3" variant="h5" className={classNames(classes.heroSectionPrice, text.font7)}>
                                     $125.00
@@ -72,11 +74,31 @@ const Home = () => {
                             </div>
                             <span className={classNames(classes.heroSectionWeiredPrice, text.font7, responsive.mdMt1)}>$250.00</span>
                         </div>
+                        <Controllers />
                     </div>
                 </section>
             </main>
+            <CartDialog />
         </>
     )
 };
 
 export default Home;
+
+/**
+ * <div className={classNames(display.flex, display.flexColumn, display.alignStretch, responsive.mdRow, 
+                            display.mt1, classes.heroSectionControllersContainer, responsive.mdAlignCenter)}>
+                            <div className={classNames(display.flex, display.alignCenter, display.justifyBetween, classes.heroSectionControllers, display.mb1,
+                                responsive.mdMb0)}>
+                                <IconButton onClick={decrementHandler}><RemoveIcon className={classNames(classes.heroSectionControllersButton, text.font7)} /></IconButton>
+                                <Typography className={classNames(text.font7)}>{ counter }</Typography>
+                                <IconButton onClick={incrementHandler}><AddIcon className={classNames(classes.heroSectionControllersButton, text.font7)} /></IconButton>
+                            </div>
+                            <Button 
+                                variant="contained"
+                                className={classNames(text.textLight, classes.heroSectionControllersAddButton, responsive.mdMl1, text.font7)} 
+                                startIcon={<ShoppingCartOutlinedIcon />}>
+                                Add to cart
+                            </Button>
+                        </div>
+ */

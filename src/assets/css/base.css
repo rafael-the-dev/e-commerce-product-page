@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    max-width: 1920px;
 }
 
 #root {
@@ -15,5 +16,11 @@ body {
 @media screen and (min-width: 900px) {
     #root {
         height: 100vh;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        margin: 0 auto;
     }
 }

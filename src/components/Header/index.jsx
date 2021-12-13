@@ -9,13 +9,17 @@ import avatarImage from '../../assets/images/image-avatar.png'
 import { useStyles } from './styles';
 import { useCallback, useMemo, useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.svg';
+import { AppContext } from '../../context/AppContext'
+import { useContext } from 'react';
 
 const Header = () => {
     const display = useDisplay();
     const text = useTypography();
     const responsive = useResponsive();
     const classes = useStyles();
+
+    const { toggleCartDialog } = useContext(AppContext);
 
     const [ canIOpenNavBar, setCanIOpenNavBar ] = useState(false);
     const menuClickHandler = useCallback(() => setCanIOpenNavBar(b => !b), [ ]);
@@ -83,8 +87,11 @@ const Header = () => {
                 </Hidden>
             </div>
             <div className={classNames(display.flex, display.alignCenter)}>
-                    <IconButton aria-label="cart" className={classNames(classes.minWidth0, text.textDark, display.mr1)}>
-                        <Badge badgeContent={2} onClick classes={{ badge: classNames(classes.headerBadge, text.textLight)}}>
+                    <IconButton 
+                        aria-label="cart" 
+                        onClick={toggleCartDialog}
+                        className={classNames(classes.minWidth0, text.textDark, display.mr1)}>
+                        <Badge badgeContent={2} classes={{ badge: classNames(classes.headerBadge, text.textLight)}}>
                         <   ShoppingCartOutlinedIcon />
                         </Badge>
                     </IconButton>
