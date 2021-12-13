@@ -1,9 +1,10 @@
-import { Divider, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
+import { Button, Divider, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@mui/material';
 import { AppContext } from '../../context/AppContext'
 import { useContext } from 'react';
 import { useStyles } from './styles';
 import classNames from 'classnames';
 import { useDisplay, useTypography, useResponsive } from '../../styles'
+import CartItem from './CartItem';
 
 const CartDialog = () => {
     const classes = useStyles();
@@ -12,6 +13,10 @@ const CartDialog = () => {
     const responsive = useResponsive();
 
     const { getCartList, openCartDialog, closeCartDialog } = useContext(AppContext);
+
+    const checkoutClickHandler = () => {
+
+    };
 
     return (
         <Dialog 
@@ -29,8 +34,19 @@ const CartDialog = () => {
                         className={classNames(text.font7, classes.dialogMessage, display.mt2, display.mb2)}>
                         Your current cart is empty.
                     </Typography>
-                ): <></>}
+                ): (
+                    getCartList().map((item, index) => <CartItem key={index} { ...item }/>)
+                )}
             </DialogContent>
+            { getCartList().length > 0 && (
+                <DialogActions>
+                    <Button 
+                        className={classNames(display.w100, classes.dialogCheckoutButton, text.textLight)} 
+                        onClick={checkoutClickHandler}>
+                        Checkout
+                    </Button>
+                </DialogActions>
+            )}
         </Dialog>
     );
 };

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { useDisplay, useTypography, useResponsive } from '../../../styles';
 import { useStyles } from './styles';
@@ -6,6 +6,7 @@ import { Button, IconButton, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { AppContext } from '../../../context/AppContext'
 
 const Controllers = () => {
     const display = useDisplay();
@@ -13,6 +14,7 @@ const Controllers = () => {
     const responsive = useResponsive();
     const classes = useStyles();
 
+    const { addProductToCart } = useContext(AppContext)
     const [ counter, setCounter ] = useState(0);
 
     const incrementHandler = () => {
@@ -47,6 +49,7 @@ const Controllers = () => {
             <Button 
                 variant="contained"
                 className={classNames(text.textLight, classes.heroSectionControllersAddButton, responsive.mdMl1, text.font7)} 
+                onClick={() => addProductToCart(1, counter)}
                 startIcon={<ShoppingCartOutlinedIcon />}>
                 Add to cart
             </Button>

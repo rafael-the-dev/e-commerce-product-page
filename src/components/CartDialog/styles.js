@@ -26,5 +26,12 @@ export const useStyles = makeStyles(theme => ({
     },
     dialogMessage: {
         color: '#69707D'
+    },
+    dialogCheckoutButton: {
+        background: '#FF7E1B !important',
+        padding: '.6rem .1rem !important',
+        '&:hover': {
+            background: '#c95f0d !important'
+        }
     }
 }));

@@ -19,7 +19,7 @@ const Header = () => {
     const responsive = useResponsive();
     const classes = useStyles();
 
-    const { toggleCartDialog } = useContext(AppContext);
+    const { getCartList, toggleCartDialog } = useContext(AppContext);
 
     const [ canIOpenNavBar, setCanIOpenNavBar ] = useState(false);
     const menuClickHandler = useCallback(() => setCanIOpenNavBar(b => !b), [ ]);
@@ -91,7 +91,7 @@ const Header = () => {
                         aria-label="cart" 
                         onClick={toggleCartDialog}
                         className={classNames(classes.minWidth0, text.textDark, display.mr1)}>
-                        <Badge badgeContent={2} classes={{ badge: classNames(classes.headerBadge, text.textLight)}}>
+                        <Badge badgeContent={getCartList().length} classes={{ badge: classNames(classes.headerBadge, text.textLight)}}>
                         <   ShoppingCartOutlinedIcon />
                         </Badge>
                     </IconButton>
