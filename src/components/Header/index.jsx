@@ -1,5 +1,4 @@
-import { Avatar , Badge, Button, Drawer, Hidden, IconButton, List, ListItem, ListItemButton, ListItemText, Paper, 
-    Typography } from '@mui/material'
+import { Avatar , Badge, Button, Drawer, Hidden, IconButton, List, ListItem, ListItemButton, ListItemText, Paper } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';

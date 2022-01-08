@@ -2,7 +2,7 @@ import { useStyles } from './styles';
 import { IconButton, Typography } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import classNames from 'classnames';
-import { useDisplay, useTypography, useResponsive } from '../../../styles'
+import { useDisplay, useTypography } from '../../../styles'
 import { AppContext } from '../../../context/AppContext';
 import { useContext } from 'react';
 
@@ -10,7 +10,7 @@ const CartItem = ({ id, quantity, totalPrice, product }) => {
     const classes = useStyles();
     const display = useDisplay();
     const text = useTypography();
-    const responsive = useResponsive();
+    //const responsive = useResponsive();
 
     const { removeProductFromCart } = useContext(AppContext)
 

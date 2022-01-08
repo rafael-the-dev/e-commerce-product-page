@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { useDisplay, useTypography, useResponsive } from '../../../styles';
 import { useStyles } from './styles';
